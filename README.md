@@ -13,7 +13,7 @@ A Node.js application that provides domain randomization and redirection based o
 
 ## Prerequisites
 
-- Node.js (v14 or higher)
+- Node.js (v18 or higher)
 - MariaDB (v10.5 or higher)
 - npm or yarn
 
