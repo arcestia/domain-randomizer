@@ -8,6 +8,13 @@
   },
   "author": "Laurensius Jeffrey",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arcestia/domain-randomizer.git"
+  },
+  "bugs": {
+    "url": "https://github.com/arcestia/domain-randomizer/issues"
+  },
   "dependencies": {
     "express": "^4.18.2",
     "mariadb": "^3.2.2",
