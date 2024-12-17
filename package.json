@@ -7,7 +7,8 @@
     "start": "node index.js"
   },
   "author": "Laurensius Jeffrey",
-  "private": true,
+  "license": "MIT",
+  "private": false,
   "repository": {
     "type": "git",
     "url": "https://github.com/arcestia/domain-randomizer.git"

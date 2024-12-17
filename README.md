@@ -126,6 +126,4 @@ Laurensius Jeffrey
 
 ## License
 
-PROPRIETARY AND CONFIDENTIAL
-For internal development use only
-Unauthorized copying or distribution is strictly prohibited
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.

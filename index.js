@@ -2,10 +2,7 @@
  * Domain Randomizer
  * Created: 2024-12-17
  * Author: Laurensius Jeffrey
- * 
- * PROPRIETARY AND CONFIDENTIAL
- * For internal development use only
- * Unauthorized copying or distribution is strictly prohibited
+ * License: MIT
  */
 
 const express = require('express');
