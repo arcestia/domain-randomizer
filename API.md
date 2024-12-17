@@ -5,7 +5,7 @@ This API allows you to manage domain randomization rules, including source domai
 
 ## Base URL
 ```
-http://localhost:3000/api
+http://localhost:8080/api
 ```
 
 ## Authentication
@@ -260,21 +260,21 @@ Returned when there's a server-side error.
 
 1. Add a new source domain:
 ```bash
-curl -X POST http://localhost:3000/api/sources \
+curl -X POST http://localhost:8080/api/sources \
   -H "Content-Type: application/json" \
   -d '{"domain": "newdomain.com"}'
 ```
 
 2. Add a new target domain:
 ```bash
-curl -X POST http://localhost:3000/api/targets \
+curl -X POST http://localhost:8080/api/targets \
   -H "Content-Type: application/json" \
   -d '{"domain": "newtarget.com"}'
 ```
 
 3. Create a new rule:
 ```bash
-curl -X POST http://localhost:3000/api/rules \
+curl -X POST http://localhost:8080/api/rules \
   -H "Content-Type: application/json" \
   -d '{
     "source_domain": "newdomain.com",
@@ -284,24 +284,24 @@ curl -X POST http://localhost:3000/api/rules \
 
 4. Toggle a rule's active status:
 ```bash
-curl -X PATCH http://localhost:3000/api/rules/1 \
+curl -X PATCH http://localhost:8080/api/rules/1 \
   -H "Content-Type: application/json" \
   -d '{"active": false}'
 ```
 
 5. Delete a source domain:
 ```bash
-curl -X DELETE http://localhost:3000/api/sources/1
+curl -X DELETE http://localhost:8080/api/sources/1
 ```
 
 6. Delete a target domain:
 ```bash
-curl -X DELETE http://localhost:3000/api/targets/1
+curl -X DELETE http://localhost:8080/api/targets/1
 ```
 
 7. Delete a rule:
 ```bash
-curl -X DELETE http://localhost:3000/api/rules/1
+curl -X DELETE http://localhost:8080/api/rules/1
 ```
 
 ## Notes

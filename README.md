@@ -1,6 +1,6 @@
 # Domain Randomizer
 
-A Node.js application that provides domain randomization and redirection based on configurable rules. When accessed through specific domains, it generates random subdomains and redirects to configured target domains based on predefined rules.
+A PHP application that provides domain randomization and redirection based on configurable rules. When accessed through specific domains, it generates random subdomains and redirects to configured target domains based on predefined rules.
 
 ## Features
 
@@ -13,9 +13,9 @@ A Node.js application that provides domain randomization and redirection based o
 
 ## Prerequisites
 
-- Node.js (v18 or higher)
-- MariaDB (v10.5 or higher)
-- npm or yarn
+- PHP 8.1 or higher
+- MariaDB 10.5 or higher
+- Composer
 
 ## Installation
 
@@ -27,7 +27,7 @@ cd domain-randomizer
 
 2. Install dependencies:
 ```bash
-npm install
+composer install
 ```
 
 3. Create and configure the `.env` file:
@@ -51,14 +51,17 @@ DB_USER=root
 DB_PASSWORD=
 DB_NAME=domainrandomizer
 DB_PORT=3306
-PORT=3000
+
+APP_ENV=development
+APP_DEBUG=true
+APP_PORT=8080
 ```
 
 ## Usage
 
-1. Start the server:
+1. Start the development server:
 ```bash
-npm start
+composer start
 ```
 
 2. The application will handle incoming requests based on the hostname used to access it.
@@ -75,19 +78,19 @@ Quick API examples:
 
 1. List all source domains:
 ```bash
-curl http://localhost:3000/api/sources
+curl http://localhost:8080/api/sources
 ```
 
 2. Add new target domain:
 ```bash
-curl -X POST http://localhost:3000/api/targets \
+curl -X POST http://localhost:8080/api/targets \
   -H "Content-Type: application/json" \
   -d '{"domain": "example.com"}'
 ```
 
 3. Create new rule:
 ```bash
-curl -X POST http://localhost:3000/api/rules \
+curl -X POST http://localhost:8080/api/rules \
   -H "Content-Type: application/json" \
   -d '{
     "source_domain": "source.com",
@@ -107,10 +110,10 @@ The application uses four main tables:
 ## Development
 
 1. Clone the repository
-2. Install dependencies: `npm install`
+2. Install dependencies: `composer install`
 3. Create `.env` file with your configuration
 4. Set up the database using `schema.sql`
-5. Run the application: `npm start`
+5. Run the application: `composer start`
 
 ## Security Considerations
 

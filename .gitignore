@@ -1,29 +1,25 @@
-# Dependencies
+# Node.js
 node_modules/
-package-lock.json
-
-# Environment variables
-.env
-
-# Logs
-logs
-*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Runtime data
-pids
-*.pid
-*.seed
-*.pid.lock
+# Environment variables
+.env
+.env.local
+.env.*.local
 
 # IDE
-.idea/
 .vscode/
-*.swp
-*.swo
+.idea/
+*.sublime-workspace
+*.sublime-project
 
-# OS
+# Composer
+/vendor/
+composer.phar
+/composer.lock
+
+# System files
 .DS_Store
 Thumbs.db
