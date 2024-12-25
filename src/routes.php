@@ -21,5 +21,5 @@ return function (App $app) {
     $app->delete('/api/rules/{id}', [DomainController::class, 'deleteRule']);
 
     // Main redirect handler
-    $app->get('/', [DomainController::class, 'handleRedirect']);
+    $app->get('/{path:.*}', [DomainController::class, 'handleRedirect']);
 };

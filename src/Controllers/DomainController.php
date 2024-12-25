@@ -21,7 +21,7 @@ class DomainController
         $this->db = Database::getInstance()->getConnection();
     }
 
-    private function generateRandomString($length = 30)
+    private function generateRandomString($length = 20)
     {
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
         $randomString = '';
@@ -265,6 +265,8 @@ class DomainController
     {
         try {
             $hostname = $request->getUri()->getHost();
+            $path = $request->getUri()->getPath();        // Get the path
+            $query = $request->getUri()->getQuery();      // Get query parameters if any
 
             $stmt = $this->db->prepare("
                 SELECT td.domain 
@@ -285,7 +287,12 @@ class DomainController
 
             $randomDomain = $targetDomains[array_rand($targetDomains)]['domain'];
             $randomSubdomain = $this->generateRandomString();
-            $redirectUrl = "https://{$randomSubdomain}.{$randomDomain}";
+            
+            // Build the redirect URL with path and query parameters
+            $redirectUrl = "https://{$randomSubdomain}.{$randomDomain}{$path}";
+            if (!empty($query)) {
+                $redirectUrl .= "?{$query}";
+            }
 
             // Log redirect
             $stmt = $this->db->prepare(
